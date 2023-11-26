@@ -1,6 +1,6 @@
 import React from 'react'
 
-const whyus = () => {
+const Whyus = () => {
     return (
         <>
             <section id="why-us" className="why-us">
@@ -10,14 +10,10 @@ const whyus = () => {
                             <div className="content">
                                 <h3>Why Choose HealthLink ?</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-                                    aute irure dolor in reprehenderit Asperiores dolores sed et.
-                                    Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio
-                                    ad corporis.
+                                We deliver a comprehensive solution with a single point-of-contact allowing you to focus on better patient care. Security, Privacy, Usability, Features, Speed, Support, Service, Reliability and Safety are the words that come to mind while selecting a Healthcare IT Service & that is what we bring to you.
                                 </p>
                                 <div className="text-center">
-                                    <a href="!#" className="more-btn">
+                                    <a href="#contact" className="more-btn">
                                         Learn More <i className="bx bx-chevron-right" />
                                     </a>
                                 </div>
@@ -29,30 +25,28 @@ const whyus = () => {
                                     <div className="col-xl-4 d-flex align-items-stretch">
                                         <div className="icon-box mt-4 mt-xl-0">
                                             <i className="bx bx-receipt" />
-                                            <h4>Corporis voluptates sit</h4>
+                                            <h4>World-Class Hospitals</h4>
                                             <p>
-                                                Consequuntur sunt aut quasi enim aliquam quae harum pariatur
-                                                laboris nisi ut aliquip
+                                            "Setting the Standard for Excellence in Healthcare: Your Trusted Destination for World-Class Hospitals and Unparalleled Patient Care."
                                             </p>
                                         </div>
                                     </div>
                                     <div className="col-xl-4 d-flex align-items-stretch">
                                         <div className="icon-box mt-4 mt-xl-0">
                                             <i className="bx bx-cube-alt" />
-                                            <h4>Ullamco laboris ladore pan</h4>
+                                            <h4>Best Doctors</h4>
                                             <p>
-                                                Excepteur sint occaecat cupidatat non proident, sunt in
-                                                culpa qui officia deserunt
+                                            "Home to the Best Doctors: Where Expertise, Compassion, and Innovation Unite for Your Health and Well-being."
                                             </p>
                                         </div>
                                     </div>
                                     <div className="col-xl-4 d-flex align-items-stretch">
                                         <div className="icon-box mt-4 mt-xl-0">
                                             <i className="bx bx-images" />
-                                            <h4>Labore consequatur</h4>
+                                            <h4>Certified Lab Procedures</h4>
                                             <p>
-                                                Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut
-                                                maiores omnis facere
+                                                
+                                             "Ensuring Precision and Confidence: Certified Lab Procedures for Accurate Diagnostics and Comprehensive Healthcare Solutions."
                                             </p>
                                         </div>
                                     </div>
@@ -69,4 +63,4 @@ const whyus = () => {
     )
 }
 
-export default whyus
+export default Whyus

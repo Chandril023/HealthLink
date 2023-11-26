@@ -1,6 +1,6 @@
 import React from 'react'
 
-const faq = () => {
+const Faq = () => {
     return (
         <>
             {/* ======= Frequently Asked Questions Section ======= */}
@@ -155,4 +155,4 @@ const faq = () => {
     )
 }
 
-export default faq
+export default Faq

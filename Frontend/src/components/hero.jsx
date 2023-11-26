@@ -1,6 +1,6 @@
 import React from 'react'
 
-const hero = () => {
+const Hero = () => {
     return (
         <>
             <section id="hero" className="d-flex align-items-center">
@@ -18,4 +18,4 @@ const hero = () => {
     )
 }
 
-export default hero
+export default Hero

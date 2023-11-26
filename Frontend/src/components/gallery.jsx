@@ -1,6 +1,6 @@
 import React from 'react'
 
-const gallery = () => {
+const Gallery = () => {
     return (
         <>
             {/* ======= Gallery Section ======= */}
@@ -9,10 +9,7 @@ const gallery = () => {
                     <div className="section-title">
                         <h2>Gallery</h2>
                         <p>
-                            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-                            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-                            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                            fugiat sit in iste officiis commodi quidem hic quas.
+                        Explore our app's gallery section for an immersive visual journey into the world of healthcare excellence. This curated collection offers a glimpse into our state-of-the-art facilities, showcases our dedicated medical professionals in action, and highlights the advanced technologies that power our services. From behind-the-scenes glimpses to patient success stories, our gallery provides a visual narrative of our commitment to delivering top-notch healthcare experiences. Join us in celebrating moments of care, innovation, and the pursuit of well-being through the captivating visuals in our app's gallery.
                         </p>
                     </div>
                 </div>
@@ -139,4 +136,4 @@ const gallery = () => {
     )
 }
 
-export default gallery
+export default Gallery

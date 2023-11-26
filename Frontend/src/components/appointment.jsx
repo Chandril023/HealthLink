@@ -1,6 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react';
+import axios from 'axios';
 
-const appointment = () => {
+const Appointment = () => {
+    const [appointmentData, setAppointmentData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+        department: '',
+        doctor: '',
+        time: '',
+    });
+
+    const handleAppointmentSubmit = async () => {
+        try {
+            const response = await axios.post('http://localhost:8000/submit-appointment', appointmentData);
+            const { success, message } = response.data;
+
+            if (success) {
+                console.log('Appointment request sent successfully');
+                window.location.href = '/home';
+            } else {
+                console.log(message);
+            }
+        } catch (error) {
+            console.error('Appointment request failed', error);
+        }
+    };
+
+    const handleAppointmentChange = (e) => {
+        const { name, value } = e.target;
+        setAppointmentData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
     return (
         <>
             {/* ======= Appointment Section ======= */}
@@ -9,17 +44,10 @@ const appointment = () => {
                     <div className="section-title">
                         <h2>Make an Appointment</h2>
                         <p>
-                            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-                            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-                            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                            fugiat sit in iste officiis commodi quidem hic quas.
+                           please fill up the necessary fields to make an appointment request. You will be mailed after confirmation.
                         </p>
                     </div>
-                    <form
-                        action="forms/appointment.php"
-                        method="post"
-                        className="php-email-form"
-                    >
+                    <form className="php-email-form">
                         <div className="row">
                             <div className="col-md-4 form-group">
                                 <input
@@ -28,8 +56,7 @@ const appointment = () => {
                                     className="form-control"
                                     id="name"
                                     placeholder="Your Name"
-                                    data-rule="minlen:4"
-                                    data-msg="Please enter at least 4 chars"
+                                    onChange={handleAppointmentChange}
                                 />
                                 <div className="validate" />
                             </div>
@@ -40,8 +67,7 @@ const appointment = () => {
                                     name="email"
                                     id="email"
                                     placeholder="Your Email"
-                                    data-rule="email"
-                                    data-msg="Please enter a valid email"
+                                    onChange={handleAppointmentChange}
                                 />
                                 <div className="validate" />
                             </div>
@@ -52,8 +78,7 @@ const appointment = () => {
                                     name="phone"
                                     id="phone"
                                     placeholder="Your Phone"
-                                    data-rule="minlen:4"
-                                    data-msg="Please enter at least 4 chars"
+                                    onChange={handleAppointmentChange}
                                 />
                                 <div className="validate" />
                             </div>
@@ -61,44 +86,52 @@ const appointment = () => {
                         <div className="row">
                             <div className="col-md-4 form-group mt-3">
                                 <input
-                                    type="datetime"
+                                    type="date"
                                     name="date"
                                     className="form-control datepicker"
                                     id="date"
                                     placeholder="Appointment Date"
-                                    data-rule="minlen:4"
-                                    data-msg="Please enter at least 4 chars"
+                                    onChange={handleAppointmentChange}
                                 />
                                 <div className="validate" />
                             </div>
                             <div className="col-md-4 form-group mt-3">
-                                <select name="department" id="department" className="form-select">
+                                <select
+                                    name="department"
+                                    id="department"
+                                    className="form-select"
+                                    onChange={handleAppointmentChange}
+                                >
                                     <option value="">Select Department</option>
-                                    <option value="Department 1">Department 1</option>
-                                    <option value="Department 2">Department 2</option>
-                                    <option value="Department 3">Department 3</option>
+                                    <option value="General">General</option>
                                 </select>
                                 <div className="validate" />
                             </div>
                             <div className="col-md-4 form-group mt-3">
-                                <select name="doctor" id="doctor" className="form-select">
+                                <select
+                                    name="doctor"
+                                    id="doctor"
+                                    className="form-select"
+                                    onChange={handleAppointmentChange}
+                                >
                                     <option value="">Select Doctor</option>
-                                    <option value="Doctor 1">Doctor 1</option>
-                                    <option value="Doctor 2">Doctor 2</option>
-                                    <option value="Doctor 3">Doctor 3</option>
+                                    <option value="Dr. Arpan Basu">Dr. Arpan Basu</option>
+                                    <option value="Dr. Spandan Sahu">Dr. Spandan Sahu</option>
+                                    <option value="Dr. Mamata Banerjee ">Dr. Mamata Banerjee</option>
                                 </select>
                                 <div className="validate" />
                             </div>
                         </div>
                         <div className="form-group mt-3">
-                            <textarea
-                                className="form-control"
-                                name="message"
-                                rows={5}
-                                placeholder="Message (Optional)"
-                                defaultValue={""}
-                            />
-                            <div className="validate" />
+                                <input
+                                    type="time"
+                                    name="time"
+                                    className="form-control datepicker"
+                                    id="time"
+                                    placeholder="Appointment Time"
+                                    onChange={handleAppointmentChange}
+                                />
+                                <div className="validate" />
                         </div>
                         <div className="mb-3">
                             <div className="loading">Loading</div>
@@ -108,15 +141,17 @@ const appointment = () => {
                             </div>
                         </div>
                         <div className="text-center">
-                            <button type="submit">Make an Appointment</button>
+                            <button type="button" onClick={handleAppointmentSubmit}>
+                                Make an Appointment
+                            </button>
                         </div>
                     </form>
                 </div>
             </section>
             {/* End Appointment Section */}
         </>
+    );
+};
 
-    )
-}
+export default Appointment;
 
-export default appointment

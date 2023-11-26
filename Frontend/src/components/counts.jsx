@@ -1,6 +1,6 @@
 import React from 'react'
 
-const counts = () => {
+const Counts = () => {
     return (
         <>
             {/* ======= Counts Section ======= */}
@@ -64,4 +64,4 @@ const counts = () => {
     )
 }
 
-export default counts
+export default Counts

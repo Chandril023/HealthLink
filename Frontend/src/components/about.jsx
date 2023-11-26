@@ -1,6 +1,6 @@
 import React from 'react'
 
-const about = () => {
+const About = () => {
     return (
         <>
             {/* ======= About Section ======= */}
@@ -64,4 +64,4 @@ const about = () => {
     )
 }
 
-export default about
+export default About

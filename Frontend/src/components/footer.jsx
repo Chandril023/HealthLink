@@ -1,6 +1,6 @@
 import React from 'react'
 
-const footer = () => {
+const Footer = () => {
     return (
         <>
             {/* ======= Footer ======= */}
@@ -48,35 +48,31 @@ const footer = () => {
                                 <h4>Our Services</h4>
                                 <ul>
                                     <li>
-                                        <i className="bx bx-chevron-right" /> <a href="!#">Web Booking</a>
+                                        <i className="bx bx-chevron-right" /> <a href="#services">Web Booking</a>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right" />{" "}
-                                        <a href="!#">Ambulance</a>
+                                        <a href="#services">Ambulance</a>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right" />{" "}
-                                        <a href="!#">Bed Availability</a>
+                                        <a href="#services">Bed Availability</a>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right" /> <a href="!#">Hospital Management</a>
                                     </li>
                                     <li>
                                         <i className="bx bx-chevron-right" />{" "}
-                                        <a href="!#">Healthcare</a>
+                                        <a href="#services">Healthcare</a>
                                     </li>
                                 </ul>
                             </div>
                             <div className="col-lg-4 col-md-6 footer-newsletter">
-                                <h4>Join Our Newsletter</h4>
+                                <h4>Join Our Upcoming Newsletter</h4>
                                 <p>
-                                    Tamen quem nulla quae legam multos aute sint culpa legam noster
-                                    magna
+                                    Coming soon, you will be notified through email.
                                 </p>
-                                <form action="" method="post">
-                                    <input type="email" name="email" />
-                                    <input type="submit" defaultValue="Subscribe" />
-                                </form>
+                                
                             </div>
                         </div>
                     </div>
@@ -115,4 +111,4 @@ const footer = () => {
     )
 }
 
-export default footer
+export default Footer

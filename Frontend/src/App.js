@@ -1,40 +1,24 @@
-import React from "react";
-import About from "./components/about";
-import Appointment from "./components/appointment";
-import Contact from "./components/contact";
-import Counts from "./components/counts";
-import Department from "./components/department";
-import Doctors from "./components/doctors";
-import Faq from "./components/faq";
-import Footer from "./components/footer";
-import Gallery from "./components/gallery";
-import Topper from "./components/topper";
-import Hero from "./components/hero";
-import Services from "./components/services";
-import Testimonials from "./components/testimonials";
-import Whyus from "./components/whyus";
+import React from 'react';
+import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom';
+import LoginPage from './components/login';
+import RegistrationPage from './components/signup';
+import Home from './components/home.jsx';
 
-function App() {
+function App () {
   return (
-    <>
-    <Topper/>
-    <Hero/>
-      <main id="main">
-        <Whyus/>
-        <About/>
-        <Counts/>
-        <Services/>
-        <Appointment/>
-        <Department/>
-        <Doctors/>
-        <Faq/>
-        <Testimonials/>
-        <Gallery/>
-        <Contact/>
-      </main>
-      <Footer/>
-    </>
-  );
+      <BrowserRouter>
+      <Routes>
+        <Route path='/login' element={<LoginPage/>}/>
+        <Route path='/registration' element={<RegistrationPage/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route
+            path="/"
+            element={<Navigate to="/login" replace />}
+          />
+      </Routes>
+      </BrowserRouter>
+      
+  )
 }
 
-export default App;
+export default App
