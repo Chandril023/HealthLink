@@ -1,6 +1,6 @@
 import React from 'react'
 
-const preloader = () => {
+const Preloader = () => {
     return (
         <>
             <div id="preloader" />
@@ -15,4 +15,4 @@ const preloader = () => {
 
 }
 
-export default preloader
+export default Preloader

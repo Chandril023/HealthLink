@@ -1,6 +1,6 @@
 import React from 'react'
 
-const topper = ({ onLoginClick, onSignupClick }) => {
+const Topper = ({ onLoginClick, onSignupClick }) => {
     const handleLoginClick = () => {
         console.log('Clicked on Login');
         onLoginClick();
@@ -16,8 +16,8 @@ const topper = ({ onLoginClick, onSignupClick }) => {
                     <div className="container d-flex justify-content-between">
                         <div className="contact-info d-flex align-items-center">
                             <i className="bi bi-envelope" />{" "}
-                            <a href="mailto:contact@example.com">contact@example.com</a>
-                            <i className="bi bi-phone" /> +1 5589 55488 55
+                            <a href="mailto:contact@example.com">healthlink@gmail.com</a>
+                            <i className="bi bi-phone" /> +91 9189786756
                         </div>
                         <div className="d-none d-lg-flex social-links align-items-center">
                             <a href="!#" className="twitter">
@@ -77,6 +77,7 @@ const topper = ({ onLoginClick, onSignupClick }) => {
                                         Contact
                                     </a>
                                 </li>
+                               
                             </ul>
                             <i className="bi bi-list mobile-nav-toggle" />
                         </nav>
@@ -93,4 +94,4 @@ const topper = ({ onLoginClick, onSignupClick }) => {
     )
 }
 
-export default topper
+export default Topper

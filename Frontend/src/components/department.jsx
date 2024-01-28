@@ -1,6 +1,6 @@
 import React from 'react'
 
-const department = () => {
+const Department = () => {
     return (
         <>
             {/* ======= Departments Section ======= */}
@@ -9,10 +9,7 @@ const department = () => {
                     <div className="section-title">
                         <h2>Departments</h2>
                         <p>
-                            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-                            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-                            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                            fugiat sit in iste officiis commodi quidem hic quas.
+                        Discover a world of specialized healthcare within our app. Our diverse array of expert departments includes general practitioners, cardiologists, orthopedic specialists, neurologists, and more. Whatever your healthcare needs, our app connects you with renowned professionals across various fields, ensuring personalized and comprehensive care. Convenience meets excellence as you explore a range of medical expertise at your fingertips.
                         </p>
                     </div>
                     <div className="row gy-4">
@@ -191,4 +188,4 @@ const department = () => {
     )
 }
 
-export default department
+export default Department

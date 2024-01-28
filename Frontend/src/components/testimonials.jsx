@@ -1,6 +1,6 @@
 import React from 'react'
 
-const testimonials = () => {
+const Testimonials = () => {
     return (
         <>
             {/* ======= Testimonials Section ======= */}
@@ -108,4 +108,4 @@ const testimonials = () => {
     )
 }
 
-export default testimonials
+export default Testimonials
