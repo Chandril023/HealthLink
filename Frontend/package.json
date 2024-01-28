@@ -1,5 +1,5 @@
 {
-  "name": "Health-Link",
+  "name": "health-link",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,10 +39,9 @@
     ]
   },
   "devDependencies": {
-    "babel-jest": "^27.5.1"
-  },
-  "devDependencies": {
     "css-loader": "^6.8.1",
-    "style-loader": "^3.3.3"
+    "style-loader": "^3.3.3",
+    "babel-jest": "^27.5.1"
   }
+
 }

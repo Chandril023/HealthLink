@@ -27,25 +27,21 @@ function App () {
     setSignupOverlayVisibility(false);
   };
   return (
-    <>
-    <Topper/>
-    <Hero/>
-      <main id="main">
-        <Whyus/>
-        <About/>
-        <Counts/>
-        <Services/>
-        <Appointment/>
-        <Department/>
-        <Doctors/>
-        <Faq/>
-        <Testimonials/>
-        <Gallery/>
-        <Contact/>
-      </main>
-      <Footer/>
-    </>
-  );
+      <BrowserRouter>
+      <Routes>
+        <Route path='/login' element={<Login onLoginClose={handleLoginClose}/>}/>
+        <Route path='/registration' element={<Signup onSignupCLose={handleSignnupClose}/>}/>
+        <Route path='/' element={<Home onLoginClick={handleLoginClick}  onSignupClick={handleSignupClick}/>}/>
+      </Routes>
+      {isLoginOverlayVisible && (
+          <Login onLoginClose={handleLoginClose} />
+        )}
+      {isSignupOverlayVisible && (
+          <Signup onSignupClose={handleSignnupClose} />
+        )}
+      </BrowserRouter>
+      
+  )
 }
 
 export default App
