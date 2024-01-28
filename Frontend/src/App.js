@@ -1,40 +1,47 @@
-import React from "react";
-import About from "./components/about";
-import Appointment from "./components/appointment";
-import Contact from "./components/contact";
-import Counts from "./components/counts";
-import Department from "./components/department";
-import Doctors from "./components/doctors";
-import Faq from "./components/faq";
-import Footer from "./components/footer";
-import Gallery from "./components/gallery";
-import Topper from "./components/topper";
-import Hero from "./components/hero";
-import Services from "./components/services";
-import Testimonials from "./components/testimonials";
-import Whyus from "./components/whyus";
+import { useState } from 'react';
+import React from 'react';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Login from './components/login';
+import Home from './components/home.jsx';
+import Signup from './components/signup';
 
-function App() {
+function App () {
+  const [isLoginOverlayVisible, setLoginOverlayVisibility] = useState(false);
+
+  const handleLoginClick = () => {
+    console.log('Login function triggered');
+    setLoginOverlayVisibility(true);
+  };
+
+  const handleLoginClose = () => {
+    setLoginOverlayVisibility(false);
+  };
+  const [isSignupOverlayVisible, setSignupOverlayVisibility] = useState(false);
+
+  const handleSignupClick = () => {
+    console.log('Login function triggered');
+    setSignupOverlayVisibility(true);
+  };
+
+  const handleSignnupClose = () => {
+    setSignupOverlayVisibility(false);
+  };
   return (
-    <>
-    <Topper/>
-    <Hero/>
-      <main id="main">
-        <Whyus/>
-        <About/>
-        <Counts/>
-        <Services/>
-        <Appointment/>
-        <Department/>
-        <Doctors/>
-        <Faq/>
-        <Testimonials/>
-        <Gallery/>
-        <Contact/>
-      </main>
-      <Footer/>
-    </>
-  );
+      <BrowserRouter>
+      <Routes>
+        <Route path='/login' element={<Login onLoginClose={handleLoginClose}/>}/>
+        <Route path='/registration' element={<Signup onSignupCLose={handleSignnupClose}/>}/>
+        <Route path='/' element={<Home onLoginClick={handleLoginClick}  onSignupClick={handleSignupClick}/>}/>
+      </Routes>
+      {isLoginOverlayVisible && (
+          <Login onLoginClose={handleLoginClose} />
+        )}
+      {isSignupOverlayVisible && (
+          <Signup onSignupClose={handleSignnupClose} />
+        )}
+      </BrowserRouter>
+      
+  )
 }
 
-export default App;
+export default App

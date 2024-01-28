@@ -1,6 +1,14 @@
 import React from 'react'
 
-const topper = () => {
+const topper = ({ onLoginClick, onSignupClick }) => {
+    const handleLoginClick = () => {
+        console.log('Clicked on Login');
+        onLoginClick();
+      };
+      const handleSignupClick =()=>{
+        console.log('Clicked on Signup');
+        onSignupClick();
+      }
     return (
         <>
             <>
@@ -37,6 +45,8 @@ const topper = () => {
                         {/* <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>*/}
                         <nav id="navbar" className="navbar order-last order-lg-0">
                             <ul>
+                            <li onClick={handleLoginClick}><a >Login</a></li>
+                            <li onClick={handleSignupClick}><a>Signup</a></li>
                                 <li>
                                     <a className="nav-link scrollto active" href="#hero">
                                         Home
