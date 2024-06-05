@@ -19,7 +19,7 @@ const Appointment = () => {
 
             if (success) {
                 console.log('Appointment request sent successfully');
-                window.location.href = '/home';
+                window.location.href = '/';
             } else {
                 console.log(message);
             }
