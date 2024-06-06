@@ -14,7 +14,7 @@ const Appointment = () => {
 
     const handleAppointmentSubmit = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/submit-appointment', appointmentData);
+            const response = await axios.post('https://healthlink-a92n.onrender.com/submit-appointment', appointmentData);
             const { success, message } = response.data;
 
             if (success) {
@@ -141,8 +141,8 @@ const Appointment = () => {
                             </div>
                         </div>
                         <div className="text-center">
-                            <button type="button" onClick={handleAppointmentSubmit}>
-                                Make an Appointment
+                            <button className='button-1' type="button" onClick={handleAppointmentSubmit}>
+                            Pay ₹1
                             </button>
                         </div>
                     </form>

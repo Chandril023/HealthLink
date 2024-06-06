@@ -13,12 +13,11 @@ import Hero from "./hero";
 import Services from "./services";
 import Testimonials from "./testimonials";
 import Whyus from "./whyus";
-
-function Home({ onLoginClick, onSignupClick }) {
+function Home({ onLoginClick, onSignupClick , onAdminLoginClick }) {
   return (
     <>
-    <Topper onLoginClick={onLoginClick} onSignupClick={onSignupClick}/>
-    <Hero/>
+      <Topper onLoginClick={onLoginClick} onSignupClick={onSignupClick} onAdminLoginClick={onAdminLoginClick}/>
+      <Hero/>
       <main id="main">
         <Whyus/>
         <About/>
@@ -38,3 +37,5 @@ function Home({ onLoginClick, onSignupClick }) {
 }
 
 export default Home;
+
+

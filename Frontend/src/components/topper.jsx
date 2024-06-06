@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Topper = ({ onLoginClick, onSignupClick }) => {
+const Topper = ({ onLoginClick, onSignupClick ,onAdminLoginClick}) => {
     const handleLoginClick = () => {
         console.log('Clicked on Login');
         onLoginClick();
+      };
+      const handleAdminLoginClick = () => {
+        console.log('Clicked on Admin');
+        onAdminLoginClick();
       };
       const handleSignupClick =()=>{
         console.log('Clicked on Signup');
@@ -45,6 +49,7 @@ const Topper = ({ onLoginClick, onSignupClick }) => {
                         {/* <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>*/}
                         <nav id="navbar" className="navbar order-last order-lg-0">
                             <ul>
+                            <li onClick={handleAdminLoginClick}><a >Admin</a></li>
                             <li onClick={handleLoginClick}><a >Login</a></li>
                             <li onClick={handleSignupClick}><a>Signup</a></li>
                                 <li>

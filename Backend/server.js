@@ -1,9 +1,14 @@
 const nodemailer=require('nodemailer')
 const express = require('express');
+const bodyParser = require('body-parser');
+require('dotenv').config(); // Add this line to load .env file
 const app = express();
 const port = 8000;
+
 const {connectDB,User,Appointment} =require('./db/dbConnection.js');
 const cors = require('cors');
+app.use(cors());
+app.use(bodyParser.json());
 //function for sending mail
 async function sendMail(name,email,doctor,date,time){    
    const transporter =  nodemailer.createTransport({
@@ -21,7 +26,7 @@ async function sendMail(name,email,doctor,date,time){
         \nThank you for choosing HealthLInk.`,
     }
 
-    //3. send email
+ //3. send email
     try {
        const result = await transporter.sendMail(mailOptions);
        console.log('Eamil sent successfully')
@@ -85,6 +90,8 @@ app.post('/submit-appointment', async (req, res) => {
         res.status(500).json({ error: 'Error submitting appointment' });
     }
 });
+const adminRouter = require('./routes/admin');
+app.use('/admin', adminRouter);
 connectDB();
 
 app.listen(port,()=> {
