@@ -13,17 +13,18 @@ import Hero from "./hero";
 import Services from "./services";
 import Testimonials from "./testimonials";
 import Whyus from "./whyus";
+import { SignedIn } from "@clerk/clerk-react";
 function Home({ onLoginClick, onSignupClick , onAdminLoginClick }) {
   return (
     <>
-      <Topper onLoginClick={onLoginClick} onSignupClick={onSignupClick} onAdminLoginClick={onAdminLoginClick}/>
+      <Topper  onSignupClick={onSignupClick} onAdminLoginClick={onAdminLoginClick}/>
       <Hero/>
       <main id="main">
         <Whyus/>
         <About/>
         <Counts/>
         <Services/>
-        <Appointment/>
+        <SignedIn><Appointment/></SignedIn>
         <Department/>
         <Doctors/>
         <Faq/>
